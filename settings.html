@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Settings</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="app">
+  <header class="topbar">
+    <a class="back-btn" href="index.html" aria-label="Go back">←</a>
+    <h1 class="topbar-title">Settings</h1>
+  </header>
+
+  <main class="content">
+    <section class="card">
+      <h2 class="section-title">Accessibility</h2>
+
+      <div class="list">
+        <div class="list-item">
+          <div class="item-info">
+            <span class="item-title">Text Size</span>
+            <span class="item-desc">Adjust the text size for better readability</span>
+          </div>
+          <button class="btn outline">Adjustment</button>
+        </div>
+
+        <div class="list-item">
+          <div class="item-info">
+            <span class="item-title">High contrast</span>
+            <span class="item-desc">Increase interface contrast</span>
+          </div>
+          <div class="toggle">
+            <input type="checkbox" id="contrast" />
+            <label for="contrast" class="toggle-label">On / Off</label>
+          </div>
+        </div>
+
+        <div class="list-item">
+          <div class="item-info">
+            <span class="item-title">Reduce motion</span>
+            <span class="item-desc">Limit animations for comfort</span>
+          </div>
+          <div class="toggle">
+            <input type="checkbox" id="motion" />
+            <label for="motion" class="toggle-label">On / Off</label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">Account</h2>
+
+      <nav class="list" aria-label="Account options">
+        <a class="list-item link" href="profile.html">
+          <div class="item-info">
+            <span class="item-title">Profile</span>
+            <span class="item-desc">Manage your profile information</span>
+          </div>
+          <span class="chevron">›</span>
+        </a>
+
+        <a class="list-item link" href="#" aria-disabled="true">
+          <div class="item-info">
+            <span class="item-title">Log Out</span>
+            <span class="item-desc">Sign out of your account</span>
+          </div>
+          <span class="chevron">›</span>
+        </a>
+      </nav>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary">
+    <a class="nav-item" href="index.html">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-label">Home</span>
+    </a>
+    <a class="nav-item" href="index.html#map">
+      <span class="nav-icon">🗺️</span>
+      <span class="nav-label">Map</span>
+    </a>
+    <a class="nav-item" href="officials.html">
+      <span class="nav-icon">🏛️</span>
+      <span class="nav-label">Department</span>
+    </a>
+    <a class="nav-item" href="settings.html" aria-current="page">
+      <span class="nav-icon">👤</span>
+      <span class="nav-label">Profile</span>
+    </a>
+  </nav>
+</body>
+</html>
