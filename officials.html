@@ -24,13 +24,14 @@
       </div>
     </section>
 
-    <section class="card">
-      <h2 class="section-title">College Department Officials</h2>
-
-      <div class="table" role="table" aria-label="College department officials">
-        <div class="table-row table-header" role="row">
-          <div class="table-cell" role="columnheader">Name</div>
-          <div class="table-cell" role="columnheader">Department</div>
+    <section class="card"> 
+      <h2 class="section-title">College Department Officials</h2> 
+      <button id="toggleOfficials" class="btn">Show/Hide Officials</button> 
+      
+      <div id="officialsList" class="collapsible"> 
+        <div class="table" role="table" aria-label="College department officials"> 
+          <div class="table-row table-header" role="row"> <div class="table-cell" role="columnheader">Name</div> 
+          <div class="table-cell" role="columnheader">Department</div> 
         </div>
 
         <div class="table-row" role="row">
@@ -95,7 +96,17 @@
               </div>
             </div>
           </div>
+
           <div class="table-cell" role="cell">Professional Industrial Education</div>
+          <div class="table-row" role="row"> 
+            <div class="table-cell" role="cell"> 
+              <div class="person"> <div class="avatar sm">IMG</div> 
+              <div> 
+                <div class="strong">Head</div> 
+                <div class="muted">Name placeholder</div> 
+              </div> 
+            </div> 
+          </div> 
         </div>
       </div>
     </section>
@@ -119,5 +130,6 @@
       <span class="nav-label">Profile</span>
     </a>
   </nav>
+  <script src="script.js"></script>
 </body>
 </html>

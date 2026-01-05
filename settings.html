@@ -13,41 +13,32 @@
   </header>
 
   <main class="content">
-    <section class="card">
-      <h2 class="section-title">Accessibility</h2>
+  <section class="card">
+    <h2 class="section-title">Accessibility Settings</h2>
 
-      <div class="list">
-        <div class="list-item">
-          <div class="item-info">
-            <span class="item-title">Text Size</span>
-            <span class="item-desc">Adjust the text size for better readability</span>
-          </div>
-          <button class="btn outline">Adjustment</button>
-        </div>
+    <!-- Dark Mode Toggle -->
+    <div class="list-item">
+  <div class="item-info">
+    <span class="item-title">Dark Mode</span>
+    <span class="item-desc">Toggle dark theme</span>
+  </div>
+  <label class="switch">
+    <input type="checkbox" id="darkModeToggle">
+    <span class="slider round"></span>
+  </label>
+</div>
 
-        <div class="list-item">
-          <div class="item-info">
-            <span class="item-title">High contrast</span>
-            <span class="item-desc">Increase interface contrast</span>
-          </div>
-          <div class="toggle">
-            <input type="checkbox" id="contrast" />
-            <label for="contrast" class="toggle-label">On / Off</label>
-          </div>
-        </div>
 
-        <div class="list-item">
-          <div class="item-info">
-            <span class="item-title">Reduce motion</span>
-            <span class="item-desc">Limit animations for comfort</span>
-          </div>
-          <div class="toggle">
-            <input type="checkbox" id="motion" />
-            <label for="motion" class="toggle-label">On / Off</label>
-          </div>
-        </div>
+    <!-- Text Size Adjustment -->
+    <div class="list-item">
+      <div class="item-info">
+        <span class="item-title">Text Size</span>
+        <span class="item-desc">Adjust text size</span>
       </div>
-    </section>
+      <button id="increaseText" class="btn outline">Increase</button>
+      <button id="resetText" class="btn outline">Reset</button>
+    </div>
+  </section>
 
     <section class="card">
       <h2 class="section-title">Account</h2>
@@ -90,5 +81,6 @@
       <span class="nav-label">Profile</span>
     </a>
   </nav>
+  <script src="script.js"></script>
 </body>
 </html>

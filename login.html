@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="app">
+  <header class="topbar">
+    <a class="back-btn" href="index.html">←</a>
+    <h1 class="topbar-title">Login</h1>
+  </header>
+
+  <main class="content">
+    <section class="card">
+      <h2 class="section-title">Sign In</h2>
+      <form id="loginForm" class="list">
+        <div class="list-item">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" required />
+        </div>
+        <div class="list-item">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" required />
+        </div>
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <p id="loginMessage"></p>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <a class="nav-item" href="index.html">🏠 Home</a>
+    <a class="nav-item" href="settings.html">⚙️ Settings</a>
+    <a class="nav-item" href="officials.html">🏛️ Department</a>
+    <a class="nav-item" href="login.html" aria-current="page">🔑 Login</a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
