@@ -3,45 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TUP Navigation Map</title>
+  <title>Map Dashboard</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="cover">
-  <header class="cover-header">
-    <h1 class="cover-title">TUP NAVIGATION MAP</h1>
-  </header>
+<body>
+  <main class="content">
+    <!-- Welcome Banner -->
+    <div id="welcomeBanner" style="display:none; text-align:center; font-weight:bold; margin-bottom:16px; font-size:1.2rem; color:#990000;"></div>
 
-  <main class="cover-main">
-    <section class="brand-card" aria-label="College brand">
-      <div class="logo-stack">
-        <div class="circle">logo</div>
-        <div class="circle">logo</div>
+    <!-- Tutorial Overlay -->
+<div id="tutorialOverlay" class="overlay">
+  <div class="overlay-content">
+    <h2>Welcome to the Navigation Map</h2>
+    <p>Here’s how to use the app:</p>
+    <ul>
+      <li>🗺️ Use the map hotspots to explore departments.</li>
+      <li>⚙️ Go to Settings for Dark Mode, Text Size, and Logout.</li>
+      <li>👤 Register first, then Login to personalize your experience.</li>
+      <li>📖 Access the Tutorial anytime from the bottom nav bar.</li>
+    </ul>
+    <button id="closeTutorial" class="btn">Got it!</button>
+  </div>
+</div>
+
+    <!-- Map Section -->
+    <section class="card">
+      <h2 class="section-title">Navigation Map Cover</h2>
+      <div id="mapContainer" style="position: relative; text-align:center;">
+        <!-- Placeholder Map -->
+        <img src="map.png" alt="Campus Navigation Map" class="map-img">
+
+        <!-- COMING SOON Banner -->
+        <div class="coming-soon">COMING SOON</div>
+
+        <!-- Officials Hotspots (still clickable for demo) -->
+        <a href="officials.html#cie" style="position:absolute;top:80px;left:100px;width:100px;height:60px;display:block;" title="CIE"></a>
+        <a href="officials.html#he" style="position:absolute;top:180px;left:200px;width:100px;height:60px;display:block;" title="HE"></a>
+        <a href="officials.html#ia" style="position:absolute;top:280px;left:300px;width:100px;height:60px;display:block;" title="IA"></a>
       </div>
-      <div class="brand-text">
-        <h2>COLLEGE OF INDUSTRIAL EDUCATION</h2>
-        <p>Find your way around campus easily.</p>
-      </div>
+    </section>
+
+    <!-- Logout Button -->
+    <section class="card">
+      <button id="logoutBtn" class="btn outline" style="width:100%;margin-top:16px;">Logout</button>
     </section>
   </main>
 
-  <nav class="bottom-nav" aria-label="Primary">
-    <a class="nav-item" href="index.html" aria-current="page">
-      <span class="nav-icon">🏠</span>
-      <span class="nav-label">Home</span>
-    </a>
-    <a class="nav-item" href="index.html#map">
-      <span class="nav-icon">🗺️</span>
-      <span class="nav-label">Map</span>
-    </a>
-    <a class="nav-item" href="officials.html">
-      <span class="nav-icon">🏛️</span>
-      <span class="nav-label">Department</span>
-    </a>
-    <a class="nav-item" href="settings.html">
-      <span class="nav-icon">👤</span>
-      <span class="nav-label">Profile</span>
-    </a>
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav map-nav">
+    <a class="nav-item" href="index.html" aria-current="page">🏠 Map</a>
+    <a class="nav-item" href="settings.html">⚙️ Settings</a>
+    <a class="nav-item" href="officials.html">🏛️ Department</a>
+    <a class="nav-item" href="tutorial.html">📖 Tutorial</a>
   </nav>
+
   <script src="script.js"></script>
 </body>
 </html>

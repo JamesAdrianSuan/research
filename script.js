@@ -1,5 +1,3 @@
-// script.js
-
 // Dark Mode Toggle (slider)
 const darkToggle = document.getElementById("darkModeToggle");
 if (darkToggle) {
@@ -23,7 +21,6 @@ if (darkToggle) {
     }
   });
 }
-
 
 // Apply saved theme on load
 window.addEventListener("DOMContentLoaded", () => {
@@ -71,74 +68,94 @@ navItems.forEach(item => {
   });
 });
 
-// Collapsible Officials Section
-const toggleBtn = document.getElementById("toggleOfficials");
-const officialsList = document.getElementById("officialsList");
 
-if (toggleBtn && officialsList) {
-  toggleBtn.addEventListener("click", () => {
-    officialsList.classList.toggle("hidden");
-    if (officialsList.classList.contains("hidden")) {
-      toggleBtn.textContent = "Show Officials";
-    } else {
-      toggleBtn.textContent = "Hide Officials";
-    }
-  });
-}
-
-// User Registration
+// Registration
 const registerForm = document.getElementById("registerForm");
 if (registerForm) {
   registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    const username = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-
-    if (username && email && password) {
-      // Save user data in localStorage (temporary)
-      const user = { username, email, password };
-      localStorage.setItem("user", JSON.stringify(user));
-
-      document.getElementById("registerMessage").textContent =
-        "Registration successful! You can now log in.";
-      document.getElementById("registerMessage").style.color = "green";
-
-      registerForm.reset();
-    } else {
-      document.getElementById("registerMessage").textContent =
-        "Please fill in all fields.";
-      document.getElementById("registerMessage").style.color = "red";
-    }
+    const user = {
+      username: document.getElementById("username").value,
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value
+    };
+    localStorage.setItem("user", JSON.stringify(user));
+    document.getElementById("registerMessage").textContent =
+      "Registration successful! You can now log in.";
   });
 }
 
-// User Login
+// Login
 const loginForm = document.getElementById("loginForm");
 if (loginForm) {
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    const email = document.getElementById("loginEmail").value.trim();
-    const password = document.getElementById("loginPassword").value.trim();
-
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
     const savedUser = JSON.parse(localStorage.getItem("user"));
 
     if (savedUser && email === savedUser.email && password === savedUser.password) {
       document.getElementById("loginMessage").textContent =
-        "Login successful! Welcome, " + savedUser.username + ".";
-      document.getElementById("loginMessage").style.color = "green";
-
-      // Example: redirect to settings page after login
-      setTimeout(() => {
-        window.location.href = "settings.html";
-      }, 1500);
+        "Login successful! Welcome, " + savedUser.username;
+      localStorage.setItem("loggedIn", "true");
+      setTimeout(() => window.location.href = "index.html", 1500);
     } else {
-      document.getElementById("loginMessage").textContent =
-        "Invalid email or password.";
-      document.getElementById("loginMessage").style.color = "red";
+      document.getElementById("loginMessage").textContent = "Invalid email or password.";
     }
   });
 }
+
+// Logout (now in Dashboard)
+const logoutBtn = document.getElementById("logoutBtn");
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("loggedIn");
+    alert("You have been logged out.");
+    window.location.href = "login.html";
+  });
+}
+
+// Welcome Banner on Map
+window.addEventListener("DOMContentLoaded", () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  const loggedIn = localStorage.getItem("loggedIn");
+  const welcomeBanner = document.getElementById("welcomeBanner");
+  if (user && loggedIn && welcomeBanner) {
+    welcomeBanner.textContent = "Welcome, " + user.username + "!";
+    welcomeBanner.style.display = "block";
+  }
+});
+
+// Tutorial Overlay Logic
+window.addEventListener("DOMContentLoaded", () => {
+  const tutorialOverlay = document.getElementById("tutorialOverlay");
+  const closeTutorial = document.getElementById("closeTutorial");
+
+  if (!localStorage.getItem("tutorialSeen")) {
+    tutorialOverlay.style.display = "flex";
+  }
+
+  if (closeTutorial) {
+    closeTutorial.addEventListener("click", () => {
+      tutorialOverlay.style.display = "none";
+      localStorage.setItem("tutorialSeen", "true");
+    });
+  }
+
+  // Welcome Banner
+  const user = JSON.parse(localStorage.getItem("user"));
+  const welcomeBanner = document.getElementById("welcomeBanner");
+  if (user && welcomeBanner) {
+    welcomeBanner.textContent = "Welcome, " + user.username + "!";
+    welcomeBanner.style.display = "block";
+  }
+});
+
+function showDept(deptId) {
+  const sections = document.querySelectorAll(".dept-section");
+  sections.forEach(section => section.style.display = "none");
+  const active = document.getElementById(deptId);
+  if (active) active.style.display = "block";
+}
+
 

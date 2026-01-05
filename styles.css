@@ -327,4 +327,158 @@ input:focus {
   outline: none;
 }
 
+/* App Colors */
+:root {
+  --accent: #990000; /* red theme */
+  --bg-gradient: linear-gradient(to bottom right, #990000, #ffffff); /* red to white gradient */
+  --input-bg: #ffffff;
+  --input-border: #ccc;
+}
+
+/* Fullscreen gradient background */
+body.login-page {
+  background: var(--bg-gradient);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Card container */
+.auth-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+/* Inputs */
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.auth-card button:hover {
+  background: #b30000;
+}
+
+/* Links and checkbox */
+.auth-card .link {
+  display: block;
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+.auth-card .checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.banner {
+  text-align: center;
+  font-weight: bold;
+  margin: 16px 0;
+  font-size: 1.4rem;
+  color: var(--accent);
+  background: rgba(255,255,255,0.8);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* COMING SOON Banner */
+.coming-soon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(1.5rem, 5vw, 3rem); /* scales with screen size */
+  font-weight: bold;
+  color: #990000;
+  background: rgba(255,255,255,0.85);
+  padding: clamp(10px, 3vw, 20px) clamp(20px, 5vw, 40px);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  max-width: 90%; /* prevents overflow on small screens */
+  word-wrap: break-word;
+}
+
+/* Extra polish for small screens */
+@media (max-width: 480px) {
+  .coming-soon {
+    font-size: 1.8rem;
+    padding: 12px 20px;
+  }
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.dept-btn {
+  flex: 1;
+  padding: 10px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dept-btn:hover {
+  background: #b30000;
+}
+
+.official {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.img-placeholder {
+  width: 60px;
+  height: 60px;
+  background: #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.info {
+  font-size: 1rem;
+}
+
+
+
 

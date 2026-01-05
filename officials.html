@@ -3,133 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>College Department Officials</title>
+  <title>Department Officials</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="app">
-  <header class="topbar">
-    <a class="back-btn" href="index.html" aria-label="Go back">←</a>
-    <h1 class="topbar-title">Settings</h1>
-  </header>
-
+<body>
   <main class="content">
+    <!-- Page Title -->
     <section class="card">
-      <h2 class="section-title">Office of the Dean</h2>
-      <div class="dean-row">
-        <div class="avatar">IMG</div>
-        <div class="dean-info">
-          <span class="item-title">College Dean</span>
-          <span class="item-desc">Name placeholder</span>
-        </div>
+      <h2 class="section-title">Department Officials</h2>
+
+      <!-- Department Selector -->
+      <div class="btn-group">
+        <button class="dept-btn" onclick="showDept('cie')">CIE</button>
+        <button class="dept-btn" onclick="showDept('cafa')">CAFA</button>
+        <button class="dept-btn" onclick="showDept('cos')">COS</button>
+        <button class="dept-btn" onclick="showDept('cla')">CLA</button>
+        <button class="dept-btn" onclick="showDept('coe')">COE</button>
       </div>
     </section>
 
-    <section class="card"> 
-      <h2 class="section-title">College Department Officials</h2> 
-      <button id="toggleOfficials" class="btn">Show/Hide Officials</button> 
-      
-      <div id="officialsList" class="collapsible"> 
-        <div class="table" role="table" aria-label="College department officials"> 
-          <div class="table-row table-header" role="row"> <div class="table-cell" role="columnheader">Name</div> 
-          <div class="table-cell" role="columnheader">Department</div> 
-        </div>
-
-        <div class="table-row" role="row">
-          <div class="table-cell" role="cell">
-            <div class="person">
-              <div class="avatar sm">IMG</div>
-              <div>
-                <div class="strong">College Secretary</div>
-                <div class="muted">Name placeholder</div>
-              </div>
-            </div>
-          </div>
-          <div class="table-cell" role="cell">CIE</div>
-        </div>
-
-        <div class="table-row" role="row">
-          <div class="table-cell" role="cell">
-            <div class="person">
-              <div class="avatar sm">IMG</div>
-              <div>
-                <div class="strong">Head</div>
-                <div class="muted">Name placeholder</div>
-              </div>
-            </div>
-          </div>
-          <div class="table-cell" role="cell">Student Teaching</div>
-        </div>
-
-        <div class="table-row" role="row">
-          <div class="table-cell" role="cell">
-            <div class="person">
-              <div class="avatar sm">IMG</div>
-              <div>
-                <div class="strong">Head</div>
-                <div class="muted">Name placeholder</div>
-              </div>
-            </div>
-          </div>
-          <div class="table-cell" role="cell">Technical Arts</div>
-        </div>
-
-        <div class="table-row" role="row">
-          <div class="table-cell" role="cell">
-            <div class="person">
-              <div class="avatar sm">IMG</div>
-              <div>
-                <div class="strong">Head</div>
-                <div class="muted">Name placeholder</div>
-              </div>
-            </div>
-          </div>
-          <div class="table-cell" role="cell">Home Economics</div>
-        </div>
-
-        <div class="table-row" role="row">
-          <div class="table-cell" role="cell">
-            <div class="person">
-              <div class="avatar sm">IMG</div>
-              <div>
-                <div class="strong">Head</div>
-                <div class="muted">Name placeholder</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="table-cell" role="cell">Professional Industrial Education</div>
-          <div class="table-row" role="row"> 
-            <div class="table-cell" role="cell"> 
-              <div class="person"> <div class="avatar sm">IMG</div> 
-              <div> 
-                <div class="strong">Head</div> 
-                <div class="muted">Name placeholder</div> 
-              </div> 
-            </div> 
-          </div> 
-        </div>
+    <!-- CIE Section -->
+    <section class="card dept-section" id="cie">
+      <h3 class="section-title">Office of the Dean – CIE</h3>
+      <div class="official">
+        <div class="img-placeholder">IMG</div>
+        <div class="info">Dr. Apollo P. Portez – College Dean</div>
       </div>
+      <h3 class="section-title">College Department Officials</h3>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Prof. Nestor M. Murcia – College Secretary</div></div>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Dr. Slyvia B. Guevarra – Head of Student Teaching</div></div>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Prof. Allan Villariza – Head of Technical Arts</div></div>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Prof. Dorothy D. Manalansan– Head of Home Economics</div></div>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Dr. Neil Andrew Calayag – Head of Professional Industrial Education</div></div>
+    </section>
+
+    <!-- CAFA Section -->
+    <section class="card dept-section" id="cafa" style="display:none;">
+      <h3 class="section-title">Office of the Dean – CAFA</h3>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Prof. Elpido T. Balais Jr. – College Dean</div></div>
+      <h3 class="section-title">College Department Officials</h3>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Ar. Rosellia Rowena Manzano – College Secretary</div></div>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Ar. Rosellia Rowena Manzano – Head of Architecture Department</div></div>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Prof. Wilma Enriquez – Head of Architecture Department</div></div>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Prof. Lowell Quey S. Fabrigar – Head of Architecture Department</div></div>
+    </section>
+
+    <!-- COS Section -->
+    <section class="card dept-section" id="cos" style="display:none;">
+      <h3 class="section-title">Office of the Dean – COS</h3>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Dean – COS</div></div>
+      <h3 class="section-title">College Department Officials</h3>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Head – Biology</div></div>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Head – Chemistry</div></div>
+    </section>
+
+    <!-- CLA Section -->
+    <section class="card dept-section" id="cla" style="display:none;">
+      <h3 class="section-title">Office of the Dean – CLA</h3>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Dean – CLA</div></div>
+      <h3 class="section-title">College Department Officials</h3>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Head – Literature</div></div>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Head – Philosophy</div></div>
+    </section>
+
+    <!-- COE Section -->
+    <section class="card dept-section" id="coe" style="display:none;">
+      <h3 class="section-title">Office of the Dean – COE</h3>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Dean – COE</div></div>
+      <h3 class="section-title">College Department Officials</h3>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Head – Electrical Engineering</div></div>
+      <div class="official"><div class="img-placeholder">IMG</div><div class="info">Head – Civil Engineering</div></div>
     </section>
   </main>
 
-  <nav class="bottom-nav" aria-label="Primary">
-    <a class="nav-item" href="index.html">
-      <span class="nav-icon">🏠</span>
-      <span class="nav-label">Home</span>
-    </a>
-    <a class="nav-item" href="index.html#map">
-      <span class="nav-icon">🗺️</span>
-      <span class="nav-label">Map</span>
-    </a>
-    <a class="nav-item" href="officials.html" aria-current="page">
-      <span class="nav-icon">🏛️</span>
-      <span class="nav-label">Department</span>
-    </a>
-    <a class="nav-item" href="settings.html">
-      <span class="nav-icon">👤</span>
-      <span class="nav-label">Profile</span>
-    </a>
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <a class="nav-item" href="index.html">🗺️ Map</a>
+    <a class="nav-item" href="settings.html">⚙️ Settings</a>
+    <a class="nav-item" href="officials.html" aria-current="page">🏢 Department</a>
+    <a class="nav-item" href="tutorial.html">📘 Tutorial</a>
   </nav>
+
   <script src="script.js"></script>
 </body>
 </html>
